@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <title>Movie Search</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <!-- new library named bootswatch to style the page -->
+   <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/lux/bootstrap.min.css" rel="stylesheet"
+   integrity="sha384-hVpXlpdRmJ+uXGwD5W6HZMnR9ENcKVRn855pPbuI/mwPIEKAuKgTKgGksVGmlAvt" crossorigin="anonymous">
+   <!-- new library named animate to produce an effect when we click the button -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+   <!-- nav bar header -->
+   <header>
+       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+           <a class="navbar-brand" href="#">Movie Search</a>
+       </nav>
+
+   </header>
+
+   <main class="container mt-2">
+       <!-- This form will be where users input data about the movies -->
+        <form>
+           <fieldset class="form-group">
+               <label for="searchTerm"> <strong>Search your favorite movie</strong></label>
+               <input type="text" class="form-control" id="searchTerm" placeholder="Enter a movie title" required>
+               <!-- This button will trigger our AJAX call -->
+               <button id="movieSearch"style="background-color:black" type="submit"><strong style="color:white">Go </strong></button>
+           </fieldset>
+       </form>
+
+   </main>
+       <br>
+   <body>
+       <!-- Wells for displaying movies descriptions -->
+       <div class= "row">
+           <div class="col">
+               <div class=container id="searchTable" style ="display:none" >
+                   <div class="card">
+                       <div class="card-header bg-secondary">Search results</div>
+                           <div class="card-body">
+                               <table class="table table-striped" id="added-movie">
+                                   <thead>
+                                       <tr>
+                                           <th>Poster</th>
+                                           <th>Title</th>
+                                           <th>Year</th>
+                                           <th>Media</th>
+                                           <th>Description</th>
+                                       </tr>
+                                   </thead>
+                                   <tbody class="content">
+                                   </tbody>
+                               </table>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <!-- default if no results -->
+       <div class= "row">
+           <div class= "col-md-12" style= "display:none" id="failedSearch">
+               <p style="text-align:center;">No results found, try searching a different word!<br><img src="assets/images/giphy.gif"></p>
+           </div>
+       </div>
+       <!-- J Query -->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+       <!-- Application Java Script -->
+       <script src="assets/javascript/movie.js"></script>
+   </body>
+</html>
